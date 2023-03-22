@@ -14,6 +14,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'contacts', component: ContactsComponent },
       { path: 'contacts/user/:id', component: ContactsDetailsComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
   },
 ];

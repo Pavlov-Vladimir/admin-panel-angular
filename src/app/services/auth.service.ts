@@ -10,12 +10,16 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  setToken(token: string): void {
+  private setToken(token: string): void {
     localStorage.setItem('token', token);
   }
 
-  getToken(): string | null {
+  private getToken(): string | null {
     return localStorage.getItem('token');
+  }
+
+  deleteToken(): void {
+    localStorage.removeItem('token');
   }
 
   isLoggedIn(): boolean {
@@ -34,5 +38,9 @@ export class AuthService {
       return of(true);
     }
     return throwError(() => new Error('Failed Login'));
+  }
+
+  logout(): void {
+    this.router.navigate(['login']);
   }
 }
