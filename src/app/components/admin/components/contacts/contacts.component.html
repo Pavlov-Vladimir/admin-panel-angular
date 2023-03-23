@@ -1,9 +1,15 @@
 <div class="col-4 mx-2 mt-2">
-  <div class="card bg-dark text-white mt-2" style="border-radius: 1rem">
+  <div
+    class="card bg-dark text-white mt-2"
+    style="border-radius: 1rem"
+    *ngFor="let person of personalList | async"
+  >
     <div class="p-2 card-body text-center">
       <div>
-        <h5></h5>
-        <button class="btn btn-success">Details</button>
+        <h5>{{ person.name }}</h5>
+        <button class="btn btn-success" [routerLink]="['users', person.id]">
+          Details
+        </button>
       </div>
     </div>
   </div>

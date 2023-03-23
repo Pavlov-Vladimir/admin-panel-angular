@@ -3,9 +3,9 @@
     <div class="p-2 card-body text-center">
       <div>
         <h5>User Details:</h5>
-        <section>
-          <h3></h3>
-          <p></p>
+        <section *ngIf="person | async as person">
+          <h3>{{ person.name }}</h3>
+          <p>{{ person.email }}</p>
         </section>
       </div>
       <button class="btn btn-success" [routerLink]="['../']">Go Back</button>

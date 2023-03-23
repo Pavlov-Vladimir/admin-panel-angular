@@ -30,6 +30,7 @@
   </div>
 </header>
 <div
+  *ngIf="isLoading | async"
   class="progress"
   role="progressbar"
   aria-label="Animated striped example"
